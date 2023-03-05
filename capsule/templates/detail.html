@@ -1,0 +1,115 @@
+{% comment %} {% load render_table from django_tables2 %} {% endcomment %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="canonical" href="https://appseed.us/admin-dashboards/django-dashboard-argon">
+  
+  <title>
+    DRDIP - Development Skill Test
+  </title>
+
+  <!-- Favicon - loaded as static -->
+  <link rel="icon" href="/static/assets/img/brand/favicon.png" type="image/png">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+  <!-- Icons -->
+  <link rel="stylesheet" href="/static/assets/vendor/nucleo/css/nucleo.css" type="text/css">
+  <link rel="stylesheet" href="/static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+
+  <link rel="stylesheet" href="/static/assets/css/argon.css?v=1.2.0" type="text/css">
+
+</head>
+
+<body class="">
+
+    <div class="container-fluid pt-4">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 order-xl-2">
+            <div class="card card-profile">
+                <div class="row justify-content-center">
+                <div class="col-lg-3 order-lg-2">
+                    <div class="card-profile-image mt-4">
+                    <a href="#">
+                        <img src="/static/assets/img/cap.jpeg" class="rounded-circle">
+                    </a>
+                    </div>
+                </div>
+                </div>
+                
+                <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+                {% for capsule in capsuleList %}
+                <div class="d-flex justify-content-between">
+                    <a href="#" class="btn btn-sm btn-info  mr-4 ">Serial: {{capsule.serial}}</a>
+                    <a href="#" class="btn btn-sm btn-default float-right">Status: {{capsule.status}}</a>
+                </div>
+                </div>
+                <div class="card-body pt-0">
+                <div class="row">
+                    <div class="col">
+                    <div class="card-profile-stats d-flex justify-content-center">
+                        <div>
+                        <span class="heading">{{capsule.reuse_count}}</span>
+                        <span class="description">Reuse Count</span>
+                        </div>
+                        <div>
+                        <span class="heading">{{capsule.water_landings}}</span>
+                        <span class="description">Water Landing</span>
+                        </div>
+                        <div>
+                        <span class="heading">{{capsule.land_landings}}</span>
+                        <span class="description">Land landing</span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="text-center">
+                    <div class="h5 mt-4">
+                        <i class="ni business_briefcase-24 mr-2"></i>List of Launches
+                    </div>
+                    {% for launch in launchList %}
+                    <h5 class="h3">
+                        {{ launch.launch }}
+                        </h5>                    
+                    </div>                    
+                    {%endfor%}
+                </div>
+                </div>
+            </div>
+            </div>            
+        </div>
+    </div>
+
+        <!-- Footer -->
+    <footer class="footer">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-xl-3">
+        <div class="text-center text-xl-left text-muted">
+            <a href="#" 
+            class="font-weight-bold ml-1" target="_blank">Development Skill Test</a>
+        </div>
+        </div>
+        <div class="col-xl-3">
+        <div class="text-center text-xl-right text-muted">
+            <a href="#" 
+            class="font-weight-bold ml-1" target="_blank"> &copy; Mekuanent Birara</a> - March 2023
+        </div>
+        </div>
+    </div>
+    </footer>
+
+
+  
+  <script src="/static/assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="/static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/assets/vendor/js-cookie/js.cookie.js"></script>
+  <script src="/static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+  <script src="/static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+
+  <script src="/static/assets/js/argon.js?v=1.2.0"></script>
+
+</body>
+
+</html>
