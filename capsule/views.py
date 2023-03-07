@@ -7,7 +7,7 @@ def home(request):
 
 def details(request):    
     capsuleList = capsules.objects.filter(cid=request.GET["cid"])
-    launchList = launches.objects.filter(launch='5eb87ce1ffd86e000604b333')
+    launchList = launches.objects.filter(cid=capsuleList[0].cid)
     return render(request,'detail.html',{'capsuleList': capsuleList, 'launchList': launchList})
 
 def getCapFromSpaceX(request):
